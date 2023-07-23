@@ -1,0 +1,4 @@
+pip install Django==3.0.1
+pip install virtualenv
+pip install Pillow
+pip install django-cleanup

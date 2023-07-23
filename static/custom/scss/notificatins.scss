@@ -1,0 +1,19 @@
+
+
+
+.profile_card{
+    position: relative;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(204,249,213,0.8925945378151261) 0%, rgba(64, 159, 167, 1)97%);
+    h3{
+        color:rgba(51, 58, 64, 1.0) !important;
+    }
+
+    p{
+        color: rgb(10,9,9) !important;
+    }
+    a{
+        cursor: pointer;
+        text-decoration: none;
+        color: #fff !important;
+    }
+}

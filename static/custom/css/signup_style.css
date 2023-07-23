@@ -1,0 +1,25 @@
+.signup {
+  width: 100%;
+  position: relative;
+  margin-top: 100px; }
+
+.sign-up-form {
+  font-family: 'Baloo 2', cursive;
+  background: linear-gradient(90deg, #e5ead4 0%, #86bcba 35%, #439fa8 100%); }
+  .sign-up-form h1 {
+    color: #e1f7b2; }
+
+button#signup-btn {
+  background-color: #3e9ba4;
+  color: #e4e9d6;
+  font-size: 20px;
+  width: 150px;
+  height: 60px;
+  font-weight: 400;
+  margin-left: 35%; }
+
+button#signup-btn:hover {
+  color: #3e9ba4;
+  background-color: #e4e9d6; }
+
+/*# sourceMappingURL=signup_style.css.map */

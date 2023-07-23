@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block CSS %}
+<link rel="stylesheet" href="{% static 'custom/css/about.css' %}">
+{% endblock CSS%}
+
+
+{% block content %}
+    <div class="container my-5">
+ 
+              <main class="main-grid">
+                      <div class="head">
+                      <h1 class="page-title">About us</h1>
+                      <p class="subtitle">We are specialsts in web development. Creativity and fun are our ingredients for awesome work.</p>
+                      </div>
+                      <img class="main-image" src="{% static 'custom/image/about_page.jpeg' %}" alt="garbage">
+                      
+                      <div class="main-text">
+                          <h2 class="section-title">What We actually Do ?</h2>
+                          <p>We represent you the online platform for you to sell your waste and make money. Your waste will not
+                            be waste anymore. Now you can easily find buyers for your waste. We encourage selling categorized
+                            waste only. Don’t throw or dump your garbage here and there dump it here and get rewarded. </p>
+                          
+                          <h2 class="section-title sub">Why Should use this Service ?</h2>
+                          <p>Categorization is the first step of garbage recycling. The buyer can avail the categorized waste from our
+                            platform that will reduce their categorization cost. They also can easily find their required waste product
+                            and make deals with the seller.
+                            The recycle center can also find the garbage as pre-categorized and directly can make deals with the
+                            seller. They will not have any categorization or separation cost. They will get their required product
+                            ready to recycle.
+                          </p>
+                      </div>
+
+                      
+                
+              </main>
+              <marquee style="color:red; font-family: 'Courier New', Courier, monospace">
+                <b>
+Project Proudly Presented By 💖 APEC Students ...     <b>
+              </marquee>
+
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3896.1920533440816!2d79.81941007493421!3d12.436920987831423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5319fc373f6277%3A0xca3a2cbf53c66b03!2sAdhiparasakthi%20Engineering%20College!5e0!3m2!1sen!2sin!4v1683462777180!5m2!1sen!2sin" width="1110" height="450" style="border:5;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    </div>
+{% endblock content%}
+
+{% block JS %}
+<script src="{% static 'custom/js/about.js' %}"></script>
+{% endblock JS %}

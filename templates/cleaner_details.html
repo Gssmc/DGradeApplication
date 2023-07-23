@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block CSS %}
+<link rel="stylesheet" href="{% static 'custom/css/cleaner_details.css' %}">
+{% endblock CSS%}
+
+
+{% block content %}
+
+<div class="product_buy my-4">
+	<section class="product my-4 container">
+		<div class="product__photo">
+			<div class="photo-container">
+				<div class="photo-main">
+					<img id="garbage-img" src="{{cleaner.image.url}}" alt="green apple slice">
+				</div>
+
+			</div>
+		</div>
+		<div class="product__info">
+			<div class="title">
+				<h1>{{cleaner.name}}</h1>
+				<p>{{cleaner.desc}}</p>
+			</div>
+			<div class="">
+                 
+                <h1 class="text-info">Starting Price</h1> <h3 class="text-danger">BDT {{cleaner.price}}</h3>
+			</div>
+			<div class="description">
+				<h3>Cleaner Details</h3>
+				<ul>
+					<li>Address : <strong class="text-danger"> {{cleaner.address}}</strong></li>
+					<li>Peculiarity <strong class="text-danger"> {{cleaner.cleaning_task}}</strong></li>
+					<li>Contact <strong class="text-danger"> {{cleaner.contact}}</strong></li>
+				</ul>
+			</div>
+
+		  <a href="{% url 'homepage' %}"><button class="buy--btn">Go To Home</button></a>	 
+		</div>
+	</section>
+
+</div>
+{% endblock content %}

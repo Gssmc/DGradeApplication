@@ -1,0 +1,55 @@
+
+$text-color:rgba(244, 255, 158,1);
+$focus-color:rgba(221, 231, 213, 1.0);
+.garbage-upload{
+    position: relative;
+    font-family: 'Baloo 2', cursive; 
+    label{
+        color: $text-color;
+    }
+
+
+    select#id_categoy {
+        width: 85px;
+        border: none;
+        border-radius: 5px;
+        height: 35px;
+    }
+    #id_image {
+        width: 100px;
+        border: none;
+        border-radius: 8px;
+    }
+
+ 
+}
+
+
+.upload_form{
+background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(204,249,213,0.8925945378151261) 0%, rgba(64, 159, 167, 1)97%);
+h2{
+    color: rgba(230, 247, 234,1);
+    font-weight: 500;
+}
+}
+
+#upload_btn {
+    width: 120px;
+    height: 50px;
+    padding: 5px;
+    color: #fff;
+    font-weight: 300;
+    background-color: rgba(7, 170, 171, 1.0);
+    font-size: 18px;
+}
+
+#upload_btn:hover{
+    padding: 2px;
+    background-color: #fff;
+    color:  rgba(7, 170, 171, 1.0);
+}
+
+input:focus{
+    color:$focus-color;
+}

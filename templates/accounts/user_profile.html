@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block CSS %}
+<link rel="stylesheet" href="{% static 'custom/css/user_profile.css' %}">
+{% endblock CSS%}
+
+
+{% block content %}
+
+<div class="user_profile my-5">
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3"> 
+          {% if messages %}
+            {% for message in messages %}
+        
+              <div class="alert alert-{{message.tags}} text-center messages" role="alert">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+    </div>
+
+    <div class="container card profile_card">
+        <div class="row">
+            <div class="col col-sm-6 col-md-6 p-3">
+   
+                    <h3 class="text-secondary"><i class="fa fa-user"></i> {{myuser.username}}</h3>
+                    <p class="">
+                        {% if myuser.account_type == 1 %}
+                        <span class="badge badge-success">Seller</span>
+                        {% else %}
+                        <span class="badge badge-success">Buyer</span>
+                        {% endif %}
+                    </p>
+                    
+                    <p class="btn btn-sm btn-warning"><a href="{% url 'signup' myuser.id %}"><i class="fa fa-pencil"></i> Edit Profile</a></p>
+                    <p class=""><i class="fa fa-address-card"></i> {{myuser.email}}</p>
+                    <p class=""><i class="fa fa-mobile"></i> {{myuser.contact}}</p>
+                    <p class=""><i class="fa fa-building"></i> {{myuser.address}}</p>
+           
+            </div>
+
+            <div class="col col-sm-6 col-md-6 p-3">
+                <p class="btn btn-sm btn-success"><a href="{% url 'notifications' myuser.id %}"><i class="fa fa-bell"></i> <span class="badge badge-warning">{{notification}}</span> Notification </a></p>
+            </div>
+        </div>
+
+
+        <div class="row container">
+            {% if myuser.account_type == 1 %}  
+            <div class="row my-3">
+                <div class="col">
+                    <h3 class="text-center">Waste You Uploaded</h3>
+                </div>
+            </div>
+            <table class="table table-striped custab">
+                 
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Weight</th>
+                        <th>Edit</th>
+                        <th class="text-center">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for garbage in garbages %}
+                    <tr>
+                        <td>{{garbage.name}}</td>
+                        <td>{{garbage.weight}}</td>
+                        <td class=""><a class='btn btn-warning btn-xs' href="{% url 'upload_garbage' garbage.id %}">Edit</a></td>
+                        <td class=""><a href="{%url 'delete_garbage' garbage.id %}" class="btn btn-danger btn-xs">  Del</a></td>
+                    </tr>
+
+                    {% endfor %}
+                </tbody>
+ 
+            </table>
+
+            {%else %}
+
+            <div class="row my-3">
+                <div class="col">
+                    <h3 class="text-center">Waste You Ordered</h3>
+                </div>
+            </div>
+
+            <table class="table table-striped custab">
+                 
+                <thead>
+                    <tr>
+                        <th>Waste Name</th>
+                        <th>Weight</th>
+                        <th>Edit</th>
+                        <th class="text-center">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for garbage in abc %}
+                    <tr>
+                        <td>{{garbage.ordered_garbage.name}}</td>
+                        <td>{{garbage.ordered_garbage.weight}}</td>
+
+                        <td class=""><a class='btn btn-warning btn-xs' href="{%url 'buy_garbage' garbage.ordered_garbage.slug garbage.ordered_garbage.id %}">Edit</a></td>
+                        <td class=""><a href="{% url 'delete_garbage_order' garbage.ordered_by  garbage.ordered_garbage.id  %}" class="btn btn-danger btn-xs">  Del</a></td>
+                    </tr>
+
+                    {% endfor %}
+                </tbody>
+ 
+            </table>
+
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+
+{% block JS %}
+ 
+{% endblock JS%}

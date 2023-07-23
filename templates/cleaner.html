@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block CSS %}
+<link rel="stylesheet" href="{% static 'custom/css/cleaner.css' %}">
+{% endblock CSS%}
+
+
+{% block content %}
+
+<section class="wrapper my-5">
+    <div class="container-fostrap">
+        <div class="mb-3"> 
+            <h1 class="heading">
+               Find Waste Collector You looking for
+            </h1>
+        </div>
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                   <!-- Single Garbage -->
+                   {% for cleaner in cleaners %}
+                        <div class="col-xs-12 col-sm-4 col-md-4">
+                        <div class="card">
+                             <p class="img-card">
+                             <img src="{{cleaner.image.url}}" alt="garbage"/>
+                             </p>
+                             <div class="card-content">
+                                  <h4 class="card-title">
+                                 {{cleaner.name}}
+                                  </h4>
+                                  <div class="text-danger pull-left">
+                                  <h4> {{cleaner.cleaning_task}}</h4> 
+                                  </div>
+                                  <div class="star-section pull-right">
+                                  <h4>  </h4> 
+                                  </div>
+                                  <div class="clearfix"></div>
+                             </div>
+                             <div class="card-read-more">
+                                  <a href="{% url 'cleaner_details' cleaner.id %}">
+                                       <button id="detail_btn" class="btn btn-info my-3">Collector Details</button>
+                                  </a>
+                             </div>
+                        </div>
+                        </div> 
+                   {% endfor %}
+                    <!-- End Single Garbage -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}

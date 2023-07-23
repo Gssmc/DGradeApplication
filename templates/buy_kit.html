@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block CSS %}
+<link rel="stylesheet" href="{% static 'custom/css/buy_kit.css' %}">
+{% endblock CSS%}
+
+
+{% block content %}
+<div class="product_buy my-4 container">
+	
+	<div class="card my-5">
+		<div class="row order-form">
+			<div class="col-md-4 offset-md-1 my-2">
+			 	<img src="{{kit.image.url}}" alt="..." class="img-thumbnail">
+				<h3 class="text-center text-info mt-2">{{kit.name}}</h3>
+				<h5 class="text-center text-danger">Price {{kit.price}}</h5>
+				<h5 class="text-info">Description</h5>
+				<p class="bs-example">{{kit.desc}}</p>
+			</div>
+			<div class="col-md-5 my-2 order_form">
+				<form method="POST">
+					{% csrf_token %}
+					{{order_form.as_p}}
+					 
+					<!-- Some update is here -->
+					<a href="#" class="btn-sm btn-danger modal-trigger" data-modal="modal-name">Order Now</a> <!-- Trigger Modal. -->
+					<!-- Modal -->
+						  <div class="modal" id="modal-name">
+							<div class="modal-sandbox"></div>
+							<div class="modal-box">
+							  <div class="modal-header">
+								<div class="close-modal">&#10006;</div> 
+								<h1>{{kit.name}}</h1>
+							  </div>
+								<div class="modal-body">
+								  <div class="row">
+									<div class="col-md-4 offset-md-1 my-2">
+										<img src="{{kit.image.url}}" alt="..." class="img-thumbnail">
+								   </div>
+								   <div class="col-md-4 offset-md-1 my-2">
+								   <h5 class="text-center text-danger">Price {{kit.price}}</h5>
+								   <h5 class="text-info">Description</h5>
+								   <p class="bs-example">{{kit.desc}}</p>
+							   	  </div>
+								  </div>
+								  <br />
+								  <button class="btn-sm btn-danger" type="submit">Confirm</button>
+								  <button class="close-modal">Close!</button>
+								</div>
+						
+							</div>
+						  </div>
+					<!-- End update section -->
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock content %}
+
+
+{% block JS %}
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="{% static 'custom/js/buy_kit.js' %}"></script>
+{% endblock JS %}

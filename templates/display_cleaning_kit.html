@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block CSS %}
+<link rel="stylesheet" href="{% static 'custom/css/display_cleaning_kit.css' %}">
+{% endblock CSS%}
+
+
+{% block content %}
+
+<section class="wrapper my-5">
+    <div class="container-fostrap">
+        <div class="mb-3"> 
+            <h1 class="heading">
+               Get Cleaning Materials From Here
+            </h1>
+        </div>
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                   <!-- Single Garbage -->
+                   {% for kit in kits %}
+                        <div class="col-xs-12 col-sm-4 col-md-4">
+                        <div class="card">
+                             <p class="img-card">
+                             <img src="{{kit.image.url}}" alt="garbage"/>
+                             </p>
+                             <div class="card-content">
+                                  <h4 class="card-title">
+                                   {{kit.name}}
+                                  </h4>
+                                  <div class="text-danger pull-left">
+                                  <h4> Price {{kit.price}} </h4> 
+                                  </div>
+                                  <div class="star-section pull-right">
+                                  <h4> </h4> 
+                                  </div>
+                                  <div class="clearfix"></div>
+                             </div>
+                             <div class="card-read-more">
+                                  <a href="{% url 'buy_cleaning_kit' user.id kit.id %}">
+                                       <button id="detail_btn" class="btn btn-info my-3">Buy</button>
+                                  </a>
+                             </div>
+                        </div>
+                        </div> 
+                   {% endfor %}
+                    <!-- End Single Garbage -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

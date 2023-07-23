@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block CSS %}
+<link rel="stylesheet" href="{% static 'custom/css/upload_garbage.css' %}">
+{% endblock CSS%}
+
+
+{% block content %}
+
+ <div class="garbage-upload my-5">
+     <div class="container">
+          <div class="row">
+               <div class="garbage_form">
+                    <form method="POST">
+                         {% csrf_token %}
+                         {{upload_form.as_p}}
+                         <button class="btn" type="submit">Upload</button>
+                    </form>
+               </div>
+          </div>
+     </div>
+ </div> 
+{% endblock content %}

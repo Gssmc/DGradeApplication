@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block CSS %}
+<link rel="stylesheet" href="{% static 'custom/css/display_waste.css' %}">
+{% endblock CSS%}
+
+
+{% block content %}
+ 
+<section class="wrapper my-5">
+     <div class="container-fostrap">
+         <div class="mb-3"> 
+             <h1 class="heading">
+                Search Waste you looking for
+             </h1>
+         </div>
+         <div class="content">
+             <div class="container">
+                 <div class="row">
+                    <!-- Single Garbage -->
+
+                    {% for garbage in garbages %}
+                         <div class="col-xs-12 col-sm-4 col-md-4">
+                         <div class="card">
+                              <p class="img-card">
+                              <img src="{{garbage.image.url}}" alt="garbage"/>
+                              </p>
+                              <div class="card-content">
+                                   <h4 class="card-title">
+                                  {{garbage.name}}
+                                   </h4>
+                                   <div class="text-danger pull-left">
+                                   <h4> </h4> 
+                                   </div>
+                                   <div class="star-section pull-right">
+                                   <h4> Weight {{garbage.weight}} kg </h4> 
+                                   </div>
+                                   <div class="clearfix"></div>
+                              </div>
+                              <div class="card-read-more">
+                                   <a href="{% url 'buy_garbage' garbage.slug garbage.id %}">
+                                        <button id="detail_btn" class="btn btn-info my-3">Buy</button>
+                                   </a>
+
+                                   <!-- Some update is here -->
+
+                                   <!-- End some  -->
+                              </div>
+                         </div>
+                         </div> 
+                    {% endfor %}
+
+                     <!-- End Single Garbage -->
+                 </div>
+             </div>
+         </div>
+     </div>
+ </section>
+
+{% endblock content %}

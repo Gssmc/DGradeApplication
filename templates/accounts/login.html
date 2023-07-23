@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%block CSS %}
+ <link rel="stylesheet" href="{% static 'custom/css/login_style.css' %}"> 
+{% endblock CSS %}
+
+
+{% block content %}
+
+<div class="login_block my-5">
+   
+    <div class="container">
+         
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="login-form jumbotron">
+                    <h1 class="text-center mb-4 h1">Welcome to Login page</h1>
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{login_form.as_p}}
+                        <button id="login_btn" type="submit" class="btn"> Login </button>
+                    </form>
+                    
+                    <div class="my-3">
+                        <p>Didn't Created Account ? <a href="{% url 'signup' %}">Create an account</a></p>
+                    </div>
+                     
+                </div>
+            </div>
+        </div>
+ 
+    </div>
+</div>
+{% endblock content %}

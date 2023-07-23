@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block CSS %}
+<link rel="stylesheet" href="{% static 'custom/css/notificatins.css' %}">
+{% endblock CSS%}
+
+
+
+{% block content %}
+
+<div class="user_profile my-5">
+
+    <div class="container card profile_card">
+ 
+        <div class="row container">
+ 
+            <div class="row my-3">
+                <div class="col">
+                    <h3 class="text-center">Your Notifications </h3>
+                </div>
+            </div>
+
+            <table class="table table-striped custab">
+                 
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Details</th>
+                        <th class="text-center">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for notification in notifications %}
+                    <tr>
+                        <td>{{notification.title}}</td>
+
+                        <td class=""><a class='btn btn-warning btn-xs' href="{% url 'notification_details' notification.id %}">Details</a></td>
+                        <td class=""><a href="{% url 'delete_notification' notification.id %}" class="btn btn-danger btn-xs">Delete</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+ 
+            </table>
+
+    
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+
+
+{% block JS %}
+ 
+{% endblock JS%}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block CSS %}
+ 
+ <link rel="stylesheet" href="{% static 'custom/css/signup_style.css' %}"> 
+{% endblock CSS %}
+
+
+{% block content %}
+    <div class="signup">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="sign-up-form jumbotron">
+                        <h1 class="text-center h1">Please Sign Up Yourself</h1>
+                        <form class="my-4" method="POST">
+                            {% csrf_token %}
+
+                             {%for field in signup_form %}
+                             <p>{{field}}</p>
+                             {% endfor %}
+                            <button id="signup-btn" class="btn" type="submit">Sign Up</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+{% endblock content %}
+
+
+
+{% block JS %}
+<script src="{% static 'custom/js/signup.js' %}"></script>
+{% endblock JS %}

@@ -1,0 +1,13 @@
+.profile_card {
+  position: relative;
+  background: linear-gradient(90deg, #020024 0%, rgba(204, 249, 213, 0.8925945378) 0%, #409fa7 97%); }
+  .profile_card h3 {
+    color: #333a40 !important; }
+  .profile_card p {
+    color: #0a0909 !important; }
+  .profile_card a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff !important; }
+
+/*# sourceMappingURL=notificatins.css.map */

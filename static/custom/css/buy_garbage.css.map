@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAIA,EAAE;EACE,KAAK,EAAE,GAAG",
+"sources": ["../scss/buy_garbage.scss"],
+"names": [],
+"file": "buy_garbage.css"
+}

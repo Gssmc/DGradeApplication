@@ -1,0 +1,23 @@
+.login_block {
+  font-family: 'Baloo 2', cursive;
+  color: red; }
+
+.login-form {
+  background: linear-gradient(90deg, #e5ead4 0%, #86bcba 35%, #439fa8 100%); }
+  .login-form h1 {
+    color: #e1f7b2; }
+
+#login_btn {
+  background-color: #3e9ba4;
+  color: #e4e9d6;
+  font-size: 20px;
+  width: 150px;
+  height: 50px;
+  font-weight: 400;
+  margin-left: 35%; }
+
+#login_btn:hover {
+  color: #3e9ba4;
+  background-color: #e4e9d6; }
+
+/*# sourceMappingURL=login_style.css.map */

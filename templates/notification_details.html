@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block CSS %}
+<link rel="stylesheet" href="{% static 'custom/css/notification_details.css' %}">
+{% endblock CSS%}
+
+{% block content %}
+
+<div class="product_buy my-4">
+	<section class="product my-4 container">
+        
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2 id="notification">Details of Notification </h2>
+            </div>
+        </div>
+        <div class="row">
+            <div id="notification_details" class="col-md-6 offset-md-3">
+                <h3>{{notification.title}}</h3>
+                <p>{{notification.desc}}</p>
+            </div>
+            <div class="col-md-6 offset-md-3">
+                <a href="{% url 'homepage' %}"><button class="btn btn-info">Go To Home</button></a>	
+                <a href="{% url 'delete_notification' notification.id %}" ><button class="btn btn-danger">Delete</button></a> 
+            </div>
+        </div>
+	</section>
+
+</div>
+{% endblock content %}

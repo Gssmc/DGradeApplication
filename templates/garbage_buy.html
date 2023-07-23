@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block CSS %}
+<link rel="stylesheet" href="{% static 'custom/css/garbage_buy.css' %}">
+{% endblock CSS%}
+
+
+{% block content %}
+
+<div class="product_buy my-4">
+	<section class="product my-4 container">
+		<div class="product__photo">
+			<div class="photo-container">
+				<div class="photo-main">
+					<img id="garbage-img" src="{{garbage.image.url}}" alt="green apple slice">
+				</div>
+
+			</div>
+		</div>
+		<div class="product__info">
+			<div class="title">
+				<h1>{{garbage.name}}</h1>
+				<p>{{garbage.desc}}</p>
+			</div>
+			<div class="price">
+				Total Weight <span>{{garbage.weight}}</span>
+			</div>
+			<div class="description">
+				<h3>Owner Details</h3>
+				<ul>
+					<li>Uploaded By <strong class="text-danger"> {{owner.username}}</strong></li>
+					<li>From <strong class="text-danger"> {{owner.institution}}</strong></li>
+					<li>Email <strong class="text-danger"> {{owner.email}}</strong></li>
+					<li>Contact <strong class="text-danger"> {{owner.contact}}</strong></li>
+					<li>Address <strong class="text-danger"> {{owner.address}}</strong></li>
+
+				</ul>
+			</div>
+		  <a href="{% url 'homepage' %}"><button class="btn btn-danger">Go To Home</button></a>	
+		  <a href="{% url 'conrifm_order' garbage.slug garbage.id %}"><button class="btn btn-success">Confirm Purchase</button></a>	 
+		</div>
+	</section>
+
+</div>
+{% endblock content %}

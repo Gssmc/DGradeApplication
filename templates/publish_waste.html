@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block CSS %}
+<link rel="stylesheet" href="{% static 'custom/css/publish_waste.css' %}">
+{% endblock CSS%}
+
+
+{% block content %}
+<div class="garbage-upload my-5">
+    <div class="container">
+         <div class="row card upload_form">
+              <div class="col-md-6 offset-md-3">
+                  <h2 class="text-center h1 card-title mt-3">Post Waste From Here</h2>
+                   <form method="POST" class="form-group" enctype="multipart/form-data" >
+                        {% csrf_token %}
+                        {{upload_form.as_p}}
+                        <button id="upload_btn" class="btn" type="submit">Upload</button>
+                   </form>
+              </div>
+         </div>
+    </div>
+</div> 
+{% endblock content %}

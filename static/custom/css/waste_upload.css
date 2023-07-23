@@ -1,0 +1,40 @@
+.garbage-upload {
+  position: relative;
+  font-family: 'Baloo 2', cursive; }
+  .garbage-upload label {
+    color: #f4ff9e; }
+  .garbage-upload select#id_categoy {
+    width: 85px;
+    border: none;
+    border-radius: 5px;
+    height: 35px; }
+  .garbage-upload #id_image {
+    width: 100px;
+    border: none;
+    border-radius: 8px; }
+
+.upload_form {
+  background: #020024;
+  background: linear-gradient(90deg, #020024 0%, rgba(204, 249, 213, 0.8925945378) 0%, #409fa7 97%); }
+  .upload_form h2 {
+    color: #e6f7ea;
+    font-weight: 500; }
+
+#upload_btn {
+  width: 120px;
+  height: 50px;
+  padding: 5px;
+  color: #fff;
+  font-weight: 300;
+  background-color: #07aaab;
+  font-size: 18px; }
+
+#upload_btn:hover {
+  padding: 2px;
+  background-color: #fff;
+  color: #07aaab; }
+
+input:focus {
+  color: #dde7d5; }
+
+/*# sourceMappingURL=waste_upload.css.map */
